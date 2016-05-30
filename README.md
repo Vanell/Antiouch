@@ -18,7 +18,7 @@ Brancher un clavier
 	pass : raspberry
 
 	sudo apt-get install git
-	git clone ...
+	git clone https://github.com/Vanell/Antiouch.git
 	cd bluecheck
 	bash install
 
