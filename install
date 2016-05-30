@@ -1,0 +1,23 @@
+#! /bin/sh
+##Install package missing
+sudo apt-get update
+sudo apt-get install apt-transport-https
+sudo apt-get install bluetooth bluez blueman
+sudo apt-get install python-pip
+sudo apt-get install libdbus-1-dev libdbus-glib-1-dev libglib2.0-dev libical-dev libreadline-dev libudev-dev libusb-dev
+sudo pip install bluepy
+sudo pip install RPi.GPIO
+sudo /etc/init.d/bluetooth restart
+
+##Install launch script at boot
+sudo cp launch_blue /etc/init.d/
+sudo chmod 755 /etc/init.d/launch_blue
+sudo update-rc.d superscript defaults
+
+##Install python script
+sudo mkdir /usr/share/bluecheck
+sudo cp bluecheck.py /usr/share/bluecheck/
+
+echo "Installation done !"
+
+reboot
